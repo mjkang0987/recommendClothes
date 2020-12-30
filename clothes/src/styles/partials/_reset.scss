@@ -1,0 +1,28 @@
+$font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    * {
+        font-family: $font;
+    }
+}
+
+div,
+ul,
+li,
+span,
+a,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button {
+    appearance: none;
+}
