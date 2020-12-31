@@ -1,7 +1,19 @@
 @import './partials/reset';
-@import './partials/header';
+@import './partials/mixin';
 
 body {
     max-width: 500px;
     margin: 0 auto;
 }
+
+button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    font-size: 0;
+}
+
+@import './partials/header';

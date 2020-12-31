@@ -1,18 +1,6 @@
-$header: "header";
-
 .#{$header} {
     display: flex;
     align-items: center;
-
-    button {
-        position: relative;
-        width: 40px;
-        height: 40px;
-        appearance: none;
-        border: none;
-        background-color: transparent;
-        font-size: 0;
-    }
 
     &-info {
         flex: 1;
@@ -24,29 +12,66 @@ $header: "header";
         font-size: 14px;
         font-weight: bold;
     }
+
+    &-time {
+        font-size: 0;
+
+        span {
+            font-size: 11px;
+            color: $black;
+        }
+
+        &-type {
+            margin-right: 4px;
+        }
+
+        &-minute {
+            &:before {
+                content: "\003a";
+                font-size: 11px;
+                color: $black;
+            }
+        }
+    }
 }
 
 .btn-#{$header}-info {
-    span {
-        &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            width: 24px;
-            height: 1px;
-            background-color: #333;
-            border-radius: 5px;
+    &.active {
+        span:before,
+        span:after {
+            left: 50%;
+            top: 50%;
+            transform-origin: left;
+            transition: all .3s;
         }
 
-        &:before {
-            left: 8px;
-            top: 14px;
+        span:before {
+            transform: rotate(45deg) translate3d(-50%, -50%, 0);
         }
 
-        &:after {
-            left: 8px;
-            bottom: 14px;
+        span:after {
+            transform: rotate(-45deg) translate3d(-50%, -50%, 0);
         }
+    }
+
+    span:before,
+    span:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 1px;
+        background-color: #333;
+        border-radius: 5px;
+    }
+
+    span:before {
+        left: 8px;
+        top: 14px;
+    }
+
+    span:after {
+        left: 8px;
+        bottom: 14px;
     }
 }
 
