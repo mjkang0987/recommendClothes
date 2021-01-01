@@ -1,2 +1,22 @@
-# recommendClothes
-Recommend Clothes That Match The Temperature for React.js
+### [오늘 뭐입지](https://mjkang0987.github.io/) React Project
+* [openweatherAPI](https://openweathermap.org/) 를 사용하여 기온별 옷차림을 추천하는 페이지입니다.
+
+### 일정
+* 2020/1/30 ~
+
+### 구현 기능
+#### API
+* [ ] 기온 및 날씨 데이터 조회
+  * [ ] 기온별 추천 옷차림
+#### 검색
+* [ ] 지역 검색
+  * [ ] 지역 초성 검색
+  * [ ] 지역 검색 자동완성
+#### 검색 리스트 관리
+* [ ] 검색한 지역 추가
+* [ ] 검색한 지역 삭제
+* [ ] 최근 검색 도시
+
+### 사용 기술
+* React.js
+* SCSS
