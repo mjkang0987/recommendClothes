@@ -17,3 +17,8 @@ button {
 }
 
 @import './partials/header';
+
+.contentWrap {
+    min-height: calc(100vh - 90px);
+    padding: 0 20px;
+}

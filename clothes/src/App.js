@@ -5,6 +5,9 @@ function App() {
   return (
     <>
       <Header/>
+      <div className="contentWrap">
+        컨텐츠 영역
+      </div>
       <Footer/>
     </>
   );
