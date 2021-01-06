@@ -23,46 +23,11 @@ button {
     padding: 0 20px;
 }
 
-.contentWrap .now-temp[data-temp="hot"] {
-    background-color: #e7cd00;
-    transition: background 1s;
+@each $name, $color in $temp{
+    .now-temp[data-temp="#{$name}"] {
+        background-color: #{$color};
+    }
 }
-
-.now-temp[data-temp="warm"] {
-    background-color: #e36804;
-    transition: background 1s;
-}
-
-.now-temp[data-temp="cozy"] {
-    background-color: #900000;
-    transition: background 1s;
-}
-
-.now-temp[data-temp="mild"] {
-    background-color: #870b8b;
-    transition: background 1s;
-}
-
-.now-temp[data-temp="cool"] {
-    background-color: #5125c1;
-    transition: background 1s;
-}
-
-.now-temp[data-temp="chilly"] {
-    background-color: #1f2c97;
-    transition: background 1s;
-}
-
-.now-temp[data-temp="cold"] {
-    background-color: #288697;
-    transition: background 1s;
-}
-
-.now-temp[data-temp="freezing"] {
-    background-color: #0879c4;
-    transition: background 1s;
-}
-
 
 @import './partials/footer';
 
