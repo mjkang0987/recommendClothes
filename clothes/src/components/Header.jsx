@@ -1,6 +1,7 @@
-import React from 'react';
+import { INITIAL_DASH } from '../constants/constants';
 
-const Header = () => {
+const Header = _ => {
+  const {DOUBLE, QUARTER} = INITIAL_DASH;
   return (
     <header className="header">
       <button
@@ -9,11 +10,11 @@ const Header = () => {
         <span>메뉴 보기</span>
       </button>
       <span className="header-info">
-        <strong className="header-location">도시명</strong>
+        <strong className="header-location">{QUARTER}</strong>
         <span className="header-time">
-          <span className="header-time-type">시간타입</span>
-          <span className="header-time-hour">시간</span>
-          <span className="header-time-minute">분</span>
+          <span className="header-time-type">{QUARTER}</span>
+          <span className="header-time-hour">{DOUBLE}</span>
+          <span className="header-time-minute">{DOUBLE}</span>
         </span>
       </span>
       <button
