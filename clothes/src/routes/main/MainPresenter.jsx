@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MainPresenter = _ => {
   return (
     <>
@@ -7,8 +5,7 @@ const MainPresenter = _ => {
         <span>오늘 날씨</span>
         <button
           type="button"
-          className="btn-refresh"
-          onClick="location.reload()">
+          className="btn-refresh">
           새로고침
         </button>
       </h2>
