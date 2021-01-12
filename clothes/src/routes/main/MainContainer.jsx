@@ -11,11 +11,14 @@ const data = async _ => {
 };
 
 const test = data();
+const Weather = createContext('');
 
 const MainContainer = _ => {
 console.log(test);
   return (
-    <MainPresenter/>
+    <Weather.Provider value={data}>
+      <MainPresenter/>
+    </Weather.Provider>
   );
 };
 
