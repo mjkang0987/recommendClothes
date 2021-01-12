@@ -10,8 +10,10 @@ const data = async _ => {
   return await getData({url: `${URL}?q=seoul${KEY}`});
 };
 
+const test = data();
 
 const MainContainer = _ => {
+console.log(test);
   return (
     <MainPresenter/>
   );
