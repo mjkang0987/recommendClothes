@@ -1,6 +1,6 @@
 export const fetchData = {
   async getData({url})  {
-    const response = await fetch(`${url}`);
-    return response.json();
+    const res = await fetch(`${url}`);
+    if (res.ok) return res.json();
   }
 }
