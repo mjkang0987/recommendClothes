@@ -398,7 +398,26 @@ const INITIAL_DASH = {
   QUARTER: '----'
 };
 
+const INITIAL_WEATHER = {
+  CITY: 'seoul',
+  TEMP: {
+    NOW: '',
+    MIN: '',
+    MAX: ''
+  },
+  LOCATION: 'seoul',
+  WEATHER: ''
+};
+
 export {
   API,
-  INITIAL_DASH
+  CITIES,
+  FIRST_KEY,
+  FIRST_KEY_CITIES,
+  TIME_TEXT,
+  TEMP,
+  TEMPS,
+  TITLE,
+  INITIAL_DASH,
+  INITIAL_WEATHER
 }
