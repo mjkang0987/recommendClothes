@@ -352,7 +352,7 @@ const TEMP = {
   ABSOLUTE: 273
 };
 
-const TEMPS = {
+const CLOTHING = {
   5: [
     {TEMP: 'FREEZING'},
     {CLOTHES: ['야상', '패딩', '목도리', '누빔옷', '두꺼운 코트', '기모']}
@@ -399,8 +399,7 @@ const INITIAL_DASH = {
 };
 
 const INITIAL_WEATHER = {
-  CITY: 'seoul',
-  TEMP: {
+  TEMPS: {
     NOW: '',
     MIN: '',
     MAX: ''
@@ -416,7 +415,7 @@ export {
   FIRST_KEY_CITIES,
   TIME_TEXT,
   TEMP,
-  TEMPS,
+  CLOTHING,
   TITLE,
   INITIAL_DASH,
   INITIAL_WEATHER
