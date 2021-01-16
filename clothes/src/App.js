@@ -1,10 +1,10 @@
+import { createContext, useState } from 'react';
+import { useOnMounted } from './action/useOnMount';
+import { fetchData } from './action/fetch';
 import Header from './components/Header';
 import Main from './routes/main/index';
 import Footer from './components/Footer';
-import { fetchData } from './action/fetch';
-import { API, INITIAL_WEATHER } from './constants/constants';
-import { createContext, useState } from 'react';
-import { useOnMounted } from './action/useOnMount';
+import { API, INITIAL_WEATHER, TEMP } from './constants/constants';
 
 const {getData} = fetchData;
 const {URL, KEY} = API;
