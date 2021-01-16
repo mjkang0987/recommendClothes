@@ -8,28 +8,37 @@ import { API, INITIAL_WEATHER, TEMP } from './constants/constants';
 
 const {getData} = fetchData;
 const {URL, KEY} = API;
-const {CITY, TEMP, LOCATION, WEATHER} = INITIAL_WEATHER;
-const weatherObject = {TEMP, LOCATION, WEATHER};
+const {LOCATION} = INITIAL_WEATHER;
+const {ABSOLUTE} = TEMP;
 
-const Weather = createContext(weatherObject);
+export const Weather = createContext(INITIAL_WEATHER);
 function App() {
-  const [weather, setWeather] = useState(weatherObject);
-  const [city, setCity] = useState(CITY);
+  const [weather, setWeather] = useState(INITIAL_WEATHER);
+  const [location, setLocation] = useState(LOCATION);
 
-  const getWeather = async _ => {
+  const getWeather = async ({city}) => {
     return await getData({url: `${URL}?q=${city}${KEY}`});
   };
 
-  const data = _ => {
-    getWeather()
+  const init = _ => {
+    getWeather({city: location})
       .then(res => {
-        setWeather(res);
-        console.log(res);
+        const {main: temps, name: city, weather} = res;
+        const weatherData = {
+          TEMPS: {
+            NOW: Math.round(temps.temp - ABSOLUTE),
+            MIN: Math.round(temps.temp_min - ABSOLUTE),
+            MAX: Math.round(temps.temp_max - ABSOLUTE)
+          },
+          WEATHER: weather[0].description,
+          LOCATION: city.toLowerCase()
+        };
+        setWeather(weatherData);
       });
   };
 
   useOnMounted(_ => {
-    data();
+    init();
   });
 
   return (
