@@ -4,7 +4,7 @@ import { INITIAL_DASH} from '../../constants/constants';
 
 const MainPresenter = _ => {
   const temps = useContext(Weather);
-  const {TEMPS, WEATHER} = temps;
+  const {TEMPS, WEATHER} = temps.weather;
   const {NOW, MIN, MAX} = TEMPS;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
   return (

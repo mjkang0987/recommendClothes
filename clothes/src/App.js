@@ -36,13 +36,27 @@ function App() {
       });
   };
 
+  const initTime = new Date();
+  const timeObj = {
+
+  }
+  const [time, setTime] = useState(initTime);
+
+  const intervalTime = _ => {
+    setInterval(_=> {
+      const currentTime = new Date();
+      setTime(currentTime);
+    }, 3000);
+  };
+
   useOnMounted(_ => {
     init();
+    intervalTime();
   });
 
   return (
     <>
-      <Weather.Provider value={weather}>
+      <Weather.Provider value={{weather, time}}>
         <Header/>
         <Main/>
         <Footer/>

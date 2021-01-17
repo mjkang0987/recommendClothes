@@ -1,6 +1,10 @@
+import { Weather } from '../App';
 import { INITIAL_DASH } from '../constants/constants';
+import { useContext } from 'react';
 
 const Header = _ => {
+  const time = useContext(Weather);
+
   const {DOUBLE, QUARTER} = INITIAL_DASH;
   return (
     <header className="header">
