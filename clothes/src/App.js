@@ -8,7 +8,6 @@ import { API, INITIAL_WEATHER, TEMP } from './constants/constants';
 
 const {getData} = fetchData;
 const {URL, KEY} = API;
-const {LOCATION} = INITIAL_WEATHER;
 const {ABSOLUTE} = TEMP;
 
 export const Weather = createContext(INITIAL_WEATHER);
