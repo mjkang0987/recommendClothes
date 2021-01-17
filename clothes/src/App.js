@@ -36,16 +36,21 @@ const App = _ => {
       });
   };
 
-  const [time, setTime] = useState(INITIAL_TIME);
+  const initTime = new Date();
+  const timeObj = {
+    hour: initTime.getHours(),
+    minute: initTime.getMinutes()
+  };
+  const [time, setTime] = useState(timeObj);
 
   const intervalTime = _ => {
     setInterval(_=> {
-      const initTime = new Date();
-      const currentTime = {
-        hour: initTime.getHours(),
-        minute: initTime.getMinutes()
-      };
-      setTime(currentTime);
+      const currentTime = new Date();
+      const currentTimeObj = {
+        hour: currentTime.getHours(),
+        minute: currentTime.getMinutes()
+      }
+      setTime(currentTimeObj);
     }, 3000);
   };
 
