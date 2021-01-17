@@ -11,7 +11,7 @@ const {URL, KEY} = API;
 const {ABSOLUTE} = TEMP;
 
 export const Weather = createContext({INITIAL_WEATHER, INITIAL_TIME});
-function App() {
+const App = _ => {
   const [weather, setWeather] = useState(INITIAL_WEATHER);
 
   const getWeather = async ({city}) => {
