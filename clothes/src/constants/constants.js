@@ -408,6 +408,11 @@ const INITIAL_WEATHER = {
   WEATHER: ''
 };
 
+const INITIAL_TIME = {
+  hour: '',
+  minute: ''
+}
+
 export {
   API,
   CITIES,
@@ -418,5 +423,6 @@ export {
   CLOTHING,
   TITLE,
   INITIAL_DASH,
-  INITIAL_WEATHER
+  INITIAL_WEATHER,
+  INITIAL_TIME
 }

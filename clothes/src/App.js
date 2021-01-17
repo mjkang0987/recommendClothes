@@ -4,13 +4,13 @@ import { fetchData } from './action/fetch';
 import Header from './components/Header';
 import Main from './routes/main/index';
 import Footer from './components/Footer';
-import { API, INITIAL_WEATHER, TEMP } from './constants/constants';
+import { API, INITIAL_WEATHER, INITIAL_TIME, TEMP } from './constants/constants';
 
 const {getData} = fetchData;
 const {URL, KEY} = API;
 const {ABSOLUTE} = TEMP;
 
-export const Weather = createContext(INITIAL_WEATHER);
+export const Weather = createContext({INITIAL_WEATHER, INITIAL_TIME});
 function App() {
   const [weather, setWeather] = useState(INITIAL_WEATHER);
 
@@ -36,15 +36,15 @@ function App() {
       });
   };
 
-  const initTime = new Date();
-  const timeObj = {
-
-  }
-  const [time, setTime] = useState(initTime);
+  const [time, setTime] = useState(INITIAL_TIME);
 
   const intervalTime = _ => {
     setInterval(_=> {
-      const currentTime = new Date();
+      const initTime = new Date();
+      const currentTime = {
+        hour: initTime.getHours(),
+        minute: initTime.getMinutes()
+      };
       setTime(currentTime);
     }, 3000);
   };
