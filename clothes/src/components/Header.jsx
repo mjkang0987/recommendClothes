@@ -1,11 +1,13 @@
 import { Weather } from '../App';
-import { INITIAL_DASH } from '../constants/constants';
+import { INITIAL_DASH, CITIES } from '../constants/constants';
 import { useContext } from 'react';
 
 const Header = _ => {
-  const time = useContext(Weather);
-
+  const value = useContext(Weather);
+  const {hour, minute} = value.time;
+  const {LOCATION} = value.weather;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
+
   return (
     <header className="header">
       <button
