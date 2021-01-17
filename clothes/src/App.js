@@ -14,14 +14,14 @@ const {ABSOLUTE} = TEMP;
 export const Weather = createContext(INITIAL_WEATHER);
 function App() {
   const [weather, setWeather] = useState(INITIAL_WEATHER);
-  const [location, setLocation] = useState(LOCATION);
 
   const getWeather = async ({city}) => {
     return await getData({url: `${URL}?q=${city}${KEY}`});
   };
 
   const init = _ => {
-    getWeather({city: location})
+    const {LOCATION} = weather;
+    getWeather({city: LOCATION})
       .then(res => {
         const {main: temps, name: city, weather} = res;
         const weatherData = {
