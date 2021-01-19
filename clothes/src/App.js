@@ -4,6 +4,7 @@ import { fetchData } from './action/fetch';
 import Header from './components/Header';
 import Main from './routes/main/index';
 import Footer from './components/Footer';
+import Loading from './components/Loading';
 import { API, INITIAL_WEATHER, INITIAL_TIME, TEMP } from './constants/constants';
 
 const {getData} = fetchData;
@@ -65,6 +66,7 @@ const App = _ => {
         <Header/>
         <Main/>
         <Footer/>
+        <Loading/>
       </Weather.Provider>
     </>
   );

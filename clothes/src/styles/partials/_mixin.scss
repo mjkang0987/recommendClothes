@@ -2,3 +2,12 @@ $header: "header";
 $footer: "footer";
 $black: #333;
 $temp: (hot: #e7cd00, warm: #e36804, cozy: #900, mild: #870b8b, cool: #5125c1, chilly: #1f2c97, cold: #288697, freezing: #0879c4);
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
