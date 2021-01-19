@@ -14,6 +14,7 @@ const {ABSOLUTE} = TEMP;
 export const Weather = createContext({INITIAL_WEATHER, INITIAL_TIME});
 const App = _ => {
   const [weather, setWeather] = useState(INITIAL_WEATHER);
+  const {LOCATION} = weather;
 
   const getWeather = async ({city}) => {
     return await getData({url: `${URL}?q=${city}${KEY}`});
@@ -65,7 +66,7 @@ const App = _ => {
         <Header/>
         <Main/>
         <Footer/>
-        <Loading/>
+        {!LOCATION && <Loading/>}
       </Weather.Provider>
     </>
   );
