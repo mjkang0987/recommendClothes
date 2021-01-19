@@ -404,7 +404,7 @@ const INITIAL_WEATHER = {
     MIN: '',
     MAX: ''
   },
-  LOCATION: 'seoul',
+  LOCATION: '',
   WEATHER: ''
 };
 

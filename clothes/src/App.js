@@ -20,8 +20,7 @@ const App = _ => {
   };
 
   const init = _ => {
-    const {LOCATION} = weather;
-    getWeather({city: LOCATION})
+    getWeather({city: 'seoul'})
       .then(res => {
         const {main: temps, name: city, weather} = res;
         const weatherData = {
