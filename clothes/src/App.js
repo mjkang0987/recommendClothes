@@ -61,7 +61,7 @@ const App = _ => {
 
   return (
     <>
-      <Weather.Provider value={{weather, time}}>
+      <Weather.Provider value={{weather, setWeather, getWeather, time}}>
         <Header/>
         <Main/>
         <Footer/>
