@@ -1,8 +1,8 @@
-import { useContext } from 'react';
+import {useContext} from 'react';
 import { Weather } from '../../App';
 import { INITIAL_DASH} from '../../constants/constants';
 
-const MainPresenter = _ => {
+const MainPresenter = data => {
   const temps = useContext(Weather);
   const {TEMPS, WEATHER} = temps.weather;
   const {NOW, MIN, MAX} = TEMPS;
