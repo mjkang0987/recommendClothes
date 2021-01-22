@@ -20,7 +20,7 @@ const Header = _ => {
         <strong className="header-location">{LOCATION ? CITIES[LOCATION] : QUARTER}</strong>
         <span className="header-time">
           <span className="header-time-type">
-            {hour !== '' ? (hour < 12 ? MORNING[0] : AFTERNOON[0]) : QUARTER}
+            {hour !== '' ? (hour < 12 ? MORNING[0] : AFTERNOON) : QUARTER}
           </span>
           <span className="header-time-hour">
             {hour !== '' ? (hour < 10 ? `0${hour}` : `${hour}`) : DOUBLE}

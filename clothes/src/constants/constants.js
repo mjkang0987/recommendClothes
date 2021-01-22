@@ -342,7 +342,7 @@ const FIRST_KEY_CITIES = {
 
 const TIME_TEXT = {
   MORNING: ['오전', '아침'],
-  AFTERNOON: ['오후', '점심'],
+  AFTERNOON: '오후',
   DINNER: '저녁',
   NIGHT: '밤',
   DAWN: '새벽'
