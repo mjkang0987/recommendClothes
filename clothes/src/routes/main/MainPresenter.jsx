@@ -27,7 +27,7 @@ const MainPresenter = ({timeType, clothing}) => {
         </strong>
         <div className="now-weather-temp">
           <span className="now-weather">
-            <span className="now-time">밤,</span>
+            <span className="now-time">{timeType},</span>
             <span className="now-weather">{WEATHER ? WEATHER : QUARTER}</span>
           </span>
           <span className="now-temp-pitch">
@@ -47,12 +47,7 @@ const MainPresenter = ({timeType, clothing}) => {
         <div className="clothes-recommend">
           <strong>{WEATHER ? DOUBLE : DOUBLE}</strong>
           <ul>
-            <li>야상</li>
-            <li>패딩</li>
-            <li>목도리</li>
-            <li>누빔옷</li>
-            <li>두꺼운 코트</li>
-            <li>기모</li>
+            {clothes && clothes.map((c, index) => <li key={`${c}-${index}`}>{c}</li>)}
           </ul>
         </div>
       </article>
