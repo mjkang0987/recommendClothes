@@ -16,13 +16,9 @@ const App = _ => {
   const [weather, setWeather] = useState(INITIAL_WEATHER);
   const {LOCATION} = weather;
 
-  const getWeather = async ({city}) => {
-    return await getData({url: `${URL}?q=${city}${KEY}`});
-  };
-
-  const init = _ => {
+  const getWeather = ({location = 'seoul'}) => {
     return (async _ => {
-      const res = await getWeather({city: 'seoul'});
+      const res = await getData({url: `${URL}?q=${location}${KEY}`});
       const {main: temps, name: city, weather} = res;
       const weatherData = {
         TEMPS: {
@@ -57,7 +53,7 @@ const App = _ => {
 
   useOnMounted(_ => {
     (async _ => {
-      await init();
+      await getWeather({location: 'seoul'});
     })();
     intervalTime();
   });
