@@ -1,5 +1,5 @@
 import { Weather } from '../App';
-import { INITIAL_DASH, CITIES, TIME_TEXT } from '../constants/constants';
+import { INITIAL_DASH, CITIES, TIME_TEXT_HALF } from '../constants/constants';
 import { useContext } from 'react';
 
 const Header = _ => {
@@ -7,7 +7,7 @@ const Header = _ => {
   const {hour, minute} = value.time;
   const {LOCATION} = value.weather;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
-  const {MORNING, AFTERNOON} = TIME_TEXT;
+  const {MORNING, AFTERNOON} = TIME_TEXT_HALF;
 
   return (
     <header className="header">
@@ -20,7 +20,7 @@ const Header = _ => {
         <strong className="header-location">{LOCATION ? CITIES[LOCATION] : QUARTER}</strong>
         <span className="header-time">
           <span className="header-time-type">
-            {hour !== '' ? (hour < 12 ? MORNING[0] : AFTERNOON) : QUARTER}
+            {hour !== '' ? (hour < 12 ? MORNING : AFTERNOON) : QUARTER}
           </span>
           <span className="header-time-hour">
             {hour !== '' ? (hour < 10 ? `0${hour}` : `${hour}`) : DOUBLE}

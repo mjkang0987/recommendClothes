@@ -338,15 +338,20 @@ const FIRST_KEY_CITIES = {
     hwansun: '화순군',
     hongseong: '홍성군'
   }
-}
+};
 
 const TIME_TEXT = {
-  MORNING: ['오전', '아침'],
-  AFTERNOON: '오후',
-  DINNER: '저녁',
-  NIGHT: '밤',
-  DAWN: '새벽'
+  6: '새벽',
+  11: '아침',
+  18: '오후',
+  22: '저녁',
+  24: '밤'
 };
+
+const TIME_TEXT_HALF = {
+  MORNING: '오전',
+  AFTERNOON: '오후'
+}
 
 const TEMP = {
   ABSOLUTE: 273
