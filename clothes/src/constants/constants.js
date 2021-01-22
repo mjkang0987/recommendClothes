@@ -354,35 +354,35 @@ const TEMP = {
 
 const CLOTHING = {
   5: [
-    {TEMP: 'FREEZING'},
+    {TEMP: 'freezing'},
     {CLOTHES: ['야상', '패딩', '목도리', '누빔옷', '두꺼운 코트', '기모']}
   ],
   9: [
-    {TEMP: 'COLD'},
+    {TEMP: 'cold'},
     {CLOTHES: ['코트', '가죽자켓', '히트텍', '기모']}
   ],
   11: [
-    {TEMP: 'CHILLY'},
+    {TEMP: 'chilly'},
     {CLOTHES: ['트렌치코트', '간절기 야상', '여러겹 껴입기', '기모바지']}
   ],
   16: [
-    {TEMP: 'COOL'},
+    {TEMP: 'cool'},
     {CLOTHES: ['자켓', '가디건', '청자켓', '니트', '스타킹', '청바지']}
   ],
   19: [
-    {TEMP: 'MILD'},
+    {TEMP: 'mild'},
     {CLOTHES: ['얇은 가디건', '얇은 니트', '맨투맨', '후드', '면바지', '청바지', '슬랙스']}
   ],
   22: [
-    {TEMP: 'COZY'},
+    {TEMP: 'cozy'},
     {CLOTHES: ['긴팔티', '블라우스', '면바지', '슬랙스']}
   ],
   27: [
-    {TEMP: 'WARM'},
+    {TEMP: 'warm'},
     {CLOTHES: ['반팔', '얇은 셔츠', '반바지', '면바지']}
   ],
   Infinity: [
-    {TEMP: 'HOT'},
+    {TEMP: 'hot'},
     {CLOTHES: ['민소매', '반팔', '반바지', '짧은 치마', '린넨소재 옷']}
   ]
 };
