@@ -40,7 +40,7 @@ const App = _ => {
   };
   const [time, setTime] = useState(timeObj);
 
-  const intervalTime = _ => {
+  const intervalTime = ({time}) => {
     setInterval(_=> {
       const currentTime = new Date();
       const currentTimeObj = {
@@ -48,14 +48,14 @@ const App = _ => {
         minute: currentTime.getMinutes()
       }
       setTime(currentTimeObj);
-    }, 3000);
+    }, time);
   };
 
   useOnMounted(_ => {
     (async _ => {
       await getWeather({location: 'seoul'});
     })();
-    intervalTime();
+    intervalTime({time: 5000});
   });
 
   return (
