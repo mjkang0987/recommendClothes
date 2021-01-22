@@ -21,20 +21,20 @@ const App = _ => {
   };
 
   const init = _ => {
-    getWeather({city: 'seoul'})
-      .then(res => {
-        const {main: temps, name: city, weather} = res;
-        const weatherData = {
-          TEMPS: {
-            NOW: Math.round(temps.temp - ABSOLUTE),
-            MIN: Math.round(temps.temp_min - ABSOLUTE),
-            MAX: Math.round(temps.temp_max - ABSOLUTE)
-          },
-          WEATHER: weather[0].description,
-          LOCATION: city.toLowerCase()
-        };
-        setWeather(weatherData);
-      });
+    return (async _ => {
+      const res = await getWeather({city: 'seoul'});
+      const {main: temps, name: city, weather} = res;
+      const weatherData = {
+        TEMPS: {
+          NOW: Math.trunc(temps.temp - ABSOLUTE),
+          MIN: Math.trunc(temps.temp_min - ABSOLUTE),
+          MAX: Math.trunc(temps.temp_max - ABSOLUTE)
+        },
+        WEATHER: weather[0].description,
+        LOCATION: city.toLowerCase()
+      };
+      setWeather(weatherData);
+    })();
   };
 
   const initTime = new Date();
@@ -56,7 +56,9 @@ const App = _ => {
   };
 
   useOnMounted(_ => {
-    init();
+    (async _ => {
+      await init();
+    })();
     intervalTime();
   });
 
