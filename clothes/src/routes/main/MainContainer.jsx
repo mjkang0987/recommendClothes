@@ -13,7 +13,8 @@ const MainContainer = _ => {
   const tempClothes = Object.keys(CLOTHING).map(Number).find(c => NOW <= c);
 
   const clothing = {
-    tempName: CLOTHING[tempClothes].TEMP,
+    term: CLOTHING[tempClothes].TERM,
+    temp: CLOTHING[tempClothes].TEMP,
     clothes: CLOTHING[tempClothes].CLOTHES
   };
 

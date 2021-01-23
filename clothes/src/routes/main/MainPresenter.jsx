@@ -7,7 +7,7 @@ const MainPresenter = ({timeType, clothing}) => {
   const {TEMPS, WEATHER} = temps.weather;
   const {NOW, MIN, MAX} = TEMPS;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
-  const {clothes} = clothing;
+  const {term, temp, clothes} = clothing;
   return (
     <>
       <h2>
@@ -20,7 +20,7 @@ const MainPresenter = ({timeType, clothing}) => {
       </h2>
       <article
         className="now-wrap"
-        data-temp="freezing">
+        data-temp={temp && temp}>
         <strong className="now-temp">
           <span>{NOW ? NOW : DOUBLE}</span>
           <em>℃</em>
@@ -43,14 +43,14 @@ const MainPresenter = ({timeType, clothing}) => {
         </div>
       </article>
       <h2>오늘 뭐입지?</h2>
-      <article className="clothes">
+      {TEMPS.NOW !== '' && <article className="clothes">
         <div className="clothes-recommend">
-          <strong>{WEATHER ? DOUBLE : DOUBLE}</strong>
+          <strong>{`추천 ${term} 옷`}</strong>
           <ul>
-            {clothes && clothes.map((c, index) => <li key={`${c}-${index}`}>{c}</li>)}
+            {clothes.map((c, index) => <li key={`${c}-${index}`}>{c}</li>)}
           </ul>
         </div>
-      </article>
+      </article>}
     </>
   );
 };
