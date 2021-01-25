@@ -1,21 +1,23 @@
+import { withRouter, Link } from 'react-router-dom';
+import { useContext } from 'react';
 import { Weather } from '../App';
 import { INITIAL_DASH, CITIES, TIME_TEXT_HALF } from '../constants/constants';
-import { useContext } from 'react';
 
-const Header = _ => {
+const Header = ({location}) => {
   const value = useContext(Weather);
   const {hour, minute} = value.time;
   const {LOCATION} = value.weather;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
   const {MORNING, AFTERNOON} = TIME_TEXT_HALF;
+  const isAll = location.pathname.includes('all');
 
   return (
     <header className="header">
-      <button
-        type="button"
-        className="btn-header-info">
+      <Link
+        to={`${isAll ? '/' : '/cities/all'}`}
+        className={`btn-header-info${isAll ? ' active' : '' }`}>
         <span>메뉴 보기</span>
-      </button>
+      </Link>
       <span className="header-info">
         <strong className="header-location">{LOCATION ? CITIES[LOCATION] : QUARTER}</strong>
         <span className="header-time">
@@ -38,4 +40,4 @@ const Header = _ => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
