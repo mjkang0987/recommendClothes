@@ -1,8 +1,10 @@
 import { createContext, useState } from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { useOnMounted } from './action/useOnMount';
 import { fetchData } from './action/fetch';
 import Header from './components/Header';
 import Main from './routes/main/index';
+import Cities from './routes/cities';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
 import { API, INITIAL_WEATHER, INITIAL_TIME, TEMP } from './constants/constants';
@@ -61,10 +63,19 @@ const App = _ => {
   return (
     <>
       <Weather.Provider value={{weather, setWeather, getWeather, time}}>
-        <Header/>
-        <Main/>
-        <Footer/>
-        {!LOCATION && <Loading/>}
+        <Router>
+          <Header/>
+            <Route
+              exact
+              path="/"
+              component={Main}/>
+            <Route
+              path="/cities/:pn"
+              component={Cities}/>
+          <Footer/>
+          {!LOCATION && <Loading/>}
+          <Redirect path="*" to="/" />
+        </Router>
       </Weather.Provider>
     </>
   );
