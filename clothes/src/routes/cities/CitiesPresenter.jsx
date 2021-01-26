@@ -1,51 +1,41 @@
-import React from 'react';
-
 const CitiesPresenter = _ => {
   return (
-    <div className="layer cities on">
-      <button
-        type="button"
-        className="buttonClose">
-        <span>도시리스트 레이어 닫기</span>
-      </button>
-      <div className="searchWrap">
-        <strong className="layerTitle">도시 리스트</strong>
-      </div>
-      <div className="locations">
+    <div className="cities-wrap">
+      <strong className="cities-title">지역 검색</strong>
+      <div className="cities-local">
         <ul>
-          <li>
-            <span>인천
-              <span className="default">선택됨</span>
-            </span>
-            <span>
+          <li
+            data-city="incheon"
+            className="cities-local">
+            <button
+              type="button"
+              className="btn-city-pick">
+              <span>인천</span>
+            </button>
+            <span className="btn-cities-wrap">
               <button
                 type="button"
-                className="load"
-                data-city="incheon">
+                className="btn-city-pick">
                 조회
               </button>
               <button
                 type="button"
-                className="remove"
-                data-city="incheon">
+                className="btn-city-remove">
                 삭제
               </button>
             </span>
           </li>
-          <li>
-            <span>서울</span>
-            <span>
+          <li data-city="seoul">
+            <button
+              type="button"
+              className="btn-city-pick">
+              <span>서울</span>
+            </button>
+            <span className="btn-cities-wrap">
               <button
                 type="button"
-                className="load"
-                data-city="seoul">
+                className="btn-city-pick">
                 조회
-              </button>
-              <button
-                type="button"
-                className="remove"
-                data-city="seoul">
-                삭제
               </button>
             </span>
           </li>
