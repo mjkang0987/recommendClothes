@@ -10,14 +10,7 @@ const MainPresenter = ({timeType, clothing}) => {
   const {term, temp, clothes} = clothing;
   return (
     <>
-      <h2>
-        <span>오늘 날씨</span>
-        <button
-          type="button"
-          className="btn-refresh">
-          새로고침
-        </button>
-      </h2>
+      <h2><span>오늘 날씨</span></h2>
       <article
         className="now-wrap"
         data-temp={temp && temp}>
