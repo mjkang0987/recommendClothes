@@ -1,6 +1,8 @@
+import CitiesContainer from './CitiesContainer';
+
 const Cities = _ => {
   return (
-    <div>cities</div>
+    <CitiesContainer />
   )
 }
 

@@ -74,26 +74,3 @@
         bottom: 14px;
     }
 }
-
-.btn-#{$header}-location {
-    span {
-        &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            transform: translate3d(-50%, -50%, 0);
-            background-color: #333;
-            border-radius: 5px;
-        }
-
-        &:before {
-            width: 20px;
-            height: 1px;
-        }
-
-        &:after {
-            width: 1px;
-            height: 20px;
-        }
-    }
-}

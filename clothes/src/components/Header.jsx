@@ -31,11 +31,6 @@ const Header = ({location}) => {
             {minute !== '' ? (minute < 10 ? `0${minute}` : `${minute}`) : DOUBLE}</span>
         </span>
       </span>
-      <button
-        type="button"
-        className="btn-header-location">
-        <span>지역 추가</span>
-      </button>
     </header>
   );
 };
