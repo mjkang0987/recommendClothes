@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import {createStore} from 'redux';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { useOnMounted } from './action/useOnMount';
 import { fetchData } from './action/fetch';
@@ -12,6 +13,34 @@ import { API, INITIAL_WEATHER, INITIAL_TIME, TEMP } from './constants/constants'
 const {getData} = fetchData;
 const {URL, KEY} = API;
 const {ABSOLUTE} = TEMP;
+
+const ADD = 'city/ADD';
+const REMOVE = 'city/REMOVE';
+const UPDATE = 'city/UPDATE';
+
+const cityAdd = _ => ({type: ADD});
+const cityRemove = _ => ({type: REMOVE});
+const cityUpdate = _ => ({type: UPDATE});
+
+const initialCity = {
+  def: 'seoul',
+  cities: []
+};
+
+const reducer = (state = initialCity, action) => {
+  switch (action.type) {
+  case UPDATE:
+    console.log('asfasf')
+    return {
+      ...state,
+      def: state.city
+    };
+  default:
+    return state;
+  }
+};
+
+export const store = createStore(reducer);
 
 export const Weather = createContext({INITIAL_WEATHER, INITIAL_TIME});
 const App = _ => {
