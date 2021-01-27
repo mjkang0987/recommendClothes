@@ -1,7 +1,9 @@
 const CitiesPresenter = _ => {
   return (
     <div className="cities-wrap">
-      <strong className="cities-title">지역 검색</strong>
+      <label title="지역검색">
+        <input type="text"/>
+      </label>
       <div className="cities-local">
         <ul>
           <li
