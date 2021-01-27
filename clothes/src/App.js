@@ -68,10 +68,10 @@ const App = _ => {
             <Route
               exact
               path="/"
-              component={Main}/>
+              component={Cities}/>
             <Route
               path="/cities/:pn"
-              component={Cities}/>
+              component={Main}/>
           <Footer/>
           {!LOCATION && <Loading/>}
           <Redirect path="*" to="/" />
