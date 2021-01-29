@@ -1,16 +1,9 @@
-import {store} from '../../App';
 const CitiesPresenter = _ => {
-  const state = store.getState();
-  const {def, cities} = state;
   return (
     <div className="cities-wrap">
       <label title="지역검색">
         <input
-          type="text"
-          onChange={e => store.dispatch({
-            type: 'cityUpdate',
-            state: e.target.value
-          })} />
+          type="text" />
       </label>
       <div className="cities-local">
         <ul>
