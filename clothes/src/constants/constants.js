@@ -418,7 +418,13 @@ const INITIAL_WEATHER = {
 const INITIAL_TIME = {
   hour: '',
   minute: ''
+};
+
+const INITIAL_CITY = {
+  current: 'seoul',
+  cities: []
 }
+
 
 export {
   API,
@@ -431,5 +437,6 @@ export {
   CLOTHING,
   INITIAL_DASH,
   INITIAL_WEATHER,
-  INITIAL_TIME
+  INITIAL_TIME,
+  INITIAL_CITY
 }
