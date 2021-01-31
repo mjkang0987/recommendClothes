@@ -1,9 +1,11 @@
-const CitiesPresenter = _ => {
+const CitiesPresenter = ({cities, onAdd, onRemove, onUpdate}) => {
   return (
     <div className="cities-wrap">
+      <div>{cities}</div>
       <label title="지역검색">
         <input
-          type="text" />
+          type="text"
+          onChange={e => onUpdate({current: e.target.value})}/>
       </label>
       <div className="cities-local">
         <ul>
