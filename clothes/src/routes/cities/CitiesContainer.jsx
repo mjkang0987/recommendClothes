@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import * as actions from '../../store/actions';
+import * as actions from '../../action/actions';
 import CitiesPresenter from './CitiesPresenter';
 
 const mapStateToProps = (state) => ({
@@ -8,11 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onAdd: ({city}) => dispatch(actions.cityAdd),
-  onRemove: ({city}) => dispatch(actions.cityRemove),
-  onUpdate: ({current}) => {
-    dispatch(actions.cityUpdate({current}))
-  },
+  onAdd: ({city}) => dispatch(actions.cityAdd({city})),
+  onRemove: ({city}) => dispatch(actions.cityRemove({city}))
 });
 
 const CitiesContainer = connect(

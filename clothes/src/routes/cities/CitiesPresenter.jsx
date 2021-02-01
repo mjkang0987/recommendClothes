@@ -4,8 +4,7 @@ const CitiesPresenter = ({cities, onAdd, onRemove, onUpdate}) => {
       <div>{cities}</div>
       <label title="지역검색">
         <input
-          type="text"
-          onChange={e => onUpdate({current: e.target.value})}/>
+          type="text" />
       </label>
       <div className="cities-local">
         <ul>
