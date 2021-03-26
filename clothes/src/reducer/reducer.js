@@ -3,18 +3,24 @@ import { INITIAL_CITY } from '../constants/constants';
 
 const reducer = (state = INITIAL_CITY, action) => {
   switch (action.type) {
-  case types.ADD:
+  case ADD:
     console.log(state.city)
     return {
       ...state,
       cities: [...state.cities, action.city]
     };
-  case types.REMOVE:
+  case REMOVE:
     console.log(state.city);
     return {
       ...state,
       cities: [...state.cities, action.city]
-    }
+    };
+  case GET:
+    console.log(state.city);
+    return {
+      ...state,
+      cities: [...state.cities, action.city]
+    };
   default:
     return state;
   }
