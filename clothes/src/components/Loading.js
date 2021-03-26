@@ -1,7 +1,8 @@
 const Loading = _ => {
   return (
     <div className="loading">
-      <i>로딩중입니다.</i>
+      <strong>로딩중입니다.</strong>
+      <i/>
     </div>
   );
 };

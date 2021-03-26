@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { useOnMounted } from './action/useOnMount';
 import { fetchData } from './action/fetch';
 import Header from './components/Header';
-import Main from './routes/main/index';
+import Main from './routes/main/Main';
 import Cities from './routes/cities';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
@@ -65,13 +65,13 @@ const App = _ => {
       <Weather.Provider value={{weather, setWeather, getWeather, time}}>
         <Router>
           <Header/>
-            <Route
-              exact
-              path="/"
-              component={Cities}/>
-            <Route
-              path="/cities/:pn"
-              component={Main}/>
+          <Route
+            exact
+            path="/"
+            component={Cities}/>
+          <Route
+            path="/cities/:pn"
+            component={Main}/>
           <Footer/>
           {!LOCATION && <Loading/>}
           <Redirect path="*" to="/" />
