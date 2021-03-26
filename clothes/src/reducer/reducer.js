@@ -1,4 +1,4 @@
-import * as types from '../action/actionTypes';
+import { ADD, REMOVE, GET } from '../action/actionTypes';
 import { INITIAL_CITY } from '../constants/constants';
 
 const reducer = (state = INITIAL_CITY, action) => {
