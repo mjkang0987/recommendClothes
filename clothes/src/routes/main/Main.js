@@ -1,12 +1,23 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import { Weather } from '../../App';
-import { INITIAL_DASH} from '../../constants/constants';
+import { CLOTHING, TIME_TEXT, INITIAL_DASH } from '../../constants/constants';
 
-const MainPresenter = ({timeType, clothing}) => {
+const Main = _ => {
   const temps = useContext(Weather);
   const {TEMPS, WEATHER} = temps.weather;
+  const {hour} = temps.time;
   const {NOW, MIN, MAX} = TEMPS;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
+
+  const timeType = TIME_TEXT[Object.keys(TIME_TEXT).map(Number).find(t => hour <= t)];
+  const tempClothes = Object.keys(CLOTHING).map(Number).find(c => NOW <= c);
+
+  const clothing = {
+    term: CLOTHING[tempClothes].TERM,
+    temp: CLOTHING[tempClothes].TEMP,
+    clothes: CLOTHING[tempClothes].CLOTHES
+  };
+
   const {term, temp, clothes} = clothing;
   return (
     <>
@@ -48,4 +59,4 @@ const MainPresenter = ({timeType, clothing}) => {
   );
 };
 
-export default MainPresenter;
+export default Main;
