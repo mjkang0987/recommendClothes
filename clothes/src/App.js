@@ -61,23 +61,21 @@ const App = _ => {
   });
 
   return (
-    <>
-      <Weather.Provider value={{weather, setWeather, getWeather, time}}>
-        <Router>
-          <Header/>
-          <Route
-            exact
-            path="/"
-            component={Cities}/>
-          <Route
-            path="/cities/:pn"
-            component={Main}/>
-          <Footer/>
-          {!LOCATION && <Loading/>}
-          <Redirect path="*" to="/" />
-        </Router>
-      </Weather.Provider>
-    </>
+    <Weather.Provider value={{weather, setWeather, getWeather, time}}>
+      <Router>
+        <Header/>
+        <Route
+          exact
+          path="/cities/:pn"
+          component={Cities}/>
+        <Route
+          path="/"
+          component={Main}/>
+        <Footer/>
+        {!LOCATION && <Loading/>}
+        <Redirect path="*" to="/" />
+      </Router>
+    </Weather.Provider>
   );
 }
 
