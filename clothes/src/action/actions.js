@@ -1,4 +1,4 @@
-import * as types from './actionTypes';
+import { ADD, REMOVE } from './actionTypes';
 
-export const cityAdd = ({city}) => ({type: types.ADD, city});
-export const cityRemove = ({city}) => ({type: types.REMOVE, city});
+export const cityAdd = ({city}) => ({type: ADD, city});
+export const cityRemove = ({city}) => ({type: REMOVE, city});
