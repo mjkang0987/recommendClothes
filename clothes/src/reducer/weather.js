@@ -1,7 +1,7 @@
 import { ADD, REMOVE, GET } from '../action/actionTypes';
 import { INITIAL_CITY } from '../constants/constants';
 
-const reducer = (state = INITIAL_CITY, action) => {
+const weatherReducer = (state = INITIAL_CITY, action) => {
   switch (action.type) {
   case ADD:
     console.log(state.city)
@@ -26,4 +26,4 @@ const reducer = (state = INITIAL_CITY, action) => {
   }
 };
 
-export default reducer;
+export default weatherReducer;
