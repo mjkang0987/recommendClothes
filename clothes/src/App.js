@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { useOnMounted } from './action/useOnMount';
-import { fetchData } from './action/fetch';
+import { fetchData } from './utils/fetch';
 import Header from './components/Header';
 import Main from './routes/main/Main';
 import Cities from './routes/cities';
