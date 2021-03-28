@@ -1,4 +1,4 @@
-import { ADD, REMOVE, GET } from '../action/actionTypes';
+import { ADD, REMOVE, GET } from '../actions/actionTypes';
 import { INITIAL_CITY } from '../constants/constants';
 
 const weatherReducer = (state = INITIAL_CITY, action) => {
