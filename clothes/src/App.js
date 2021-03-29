@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getTime } from './actions/time';
 import Header from './components/Header';
 
-const App = ({hour, minute, getTime}) => {
+const App = ({time, getTime, TEMPS}) => {
   setInterval(_ => {
     const now = new Date();
     const currentTime = {
@@ -15,25 +15,18 @@ const App = ({hour, minute, getTime}) => {
 
   return (
     <Router>
-      <Header
-        hour={hour}
-        minute={minute}/>
+      <Header time={time}/>
     </Router>
   );
 }
 
-const mapStateToProps = state => ({
-  hour: state.timeReducer.hour,
-  minute: state.timeReducer.minute
-})
-
-const mapDispatchToProps = dispatch => ({
-  getTime: ({now}) => {
-    dispatch(getTime({now}));
-  }
-})
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  state => ({
+    time: state.timeReducer.time
+  }),
+  dispatch => ({
+    getTime: ({now}) => {
+      dispatch(getTime({now}));
+    }
+  })
 )(App);

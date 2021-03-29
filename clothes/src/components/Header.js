@@ -1,6 +1,7 @@
 import { INITIAL_DASH, TIME_TEXT_HALF } from '../constants/constants';
 
-const Header = ({hour, minute}) => {
+const Header = ({time}) => {
+  const {hour, minute} = time;
   const {MORNING, AFTERNOON} = TIME_TEXT_HALF;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
 
