@@ -1,3 +1,3 @@
 import { GET_TIME } from './actionTypes';
 
-export const timeGet = ({now}) => ({type: GET_TIME, now});
+export const getTime = ({now}) => ({type: GET_TIME, now});

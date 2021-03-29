@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { timeGet } from './actions/time';
+import { getTime } from './actions/time';
 import Header from './components/Header';
 
 const App = ({hour, minute, timeGet}) => {
@@ -29,7 +29,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   timeGet: ({now}) => {
-    dispatch(timeGet({now}));
+    dispatch(getTime({now}));
   }
 })
 
