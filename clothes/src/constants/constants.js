@@ -400,6 +400,13 @@ const CLOTHING = {
   }
 };
 
+const INITIAL_TIME = {
+  time: {
+    hour: '--',
+    minute: '--'
+  }
+};
+
 const INITIAL_DASH = {
   DOUBLE: '--',
   QUARTER: '----'

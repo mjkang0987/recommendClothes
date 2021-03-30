@@ -1,21 +1,14 @@
 import { GET_TIME } from '../actions/actionTypes';
+import { INITIAL_TIME } from '../constants/constants';
 
-const initTime = new Date();
-const timeObj = {
-  time: {
-    hour: initTime.getHours(),
-    minute: initTime.getMinutes()
-  }
-};
-
-const timeReducer = (state = timeObj, action) => {
+const timeReducer = (state = INITIAL_TIME, action) => {
   switch (action.type) {
   case GET_TIME:
     return {
-      ...state,
       time: {
-        hour: action.now.hour,
-        minute: action.now.minute
+        ...state,
+        hour: action.now.time.hour,
+        minute: action.now.time.minute
       }
     }
   default:

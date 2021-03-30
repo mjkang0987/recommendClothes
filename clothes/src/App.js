@@ -3,16 +3,26 @@ import { connect } from 'react-redux';
 import { getTime } from './actions/time';
 import Header from './components/Header';
 
-const App = ({time, getTime, TEMPS}) => {
-  setInterval(_ => {
-    const now = new Date();
-    const currentTime = {
-      hour: now.getHours(),
-      minute: now.getMinutes()
-    }
-    getTime({now: currentTime});
-  }, 5000);
 
+const App = ({time, getTime, getCity}) => {
+
+  const initTime = _ => {
+    const initTime = new Date();
+    const timeObj = {
+      time: {
+        hour: initTime.getHours(),
+        minute: initTime.getMinutes()
+      }
+    };
+    getTime({now: timeObj});
+  }
+  useOnMounted(_ => {
+    initTime();
+
+    setInterval(_ => {
+      initTime();
+    }, 3000);
+  }, [])
   return (
     <Router>
       <Header time={time}/>
