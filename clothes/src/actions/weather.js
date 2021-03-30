@@ -1,5 +1,5 @@
-import { ADD, GET, REMOVE } from './actionTypes';
+import { GET, ADD, REMOVE } from './actionTypes';
 
-export const cityAdd = ({city}) => ({type: ADD, city});
-export const cityRemove = ({city}) => ({type: REMOVE, city});
-export const cityGet = ({city}) => ({type: GET, city});
+export const getCity = ({weather}) => ({type: GET, weather});
+export const addCity = _ => ({type: ADD});
+export const removeCity = _ => ({type: REMOVE});

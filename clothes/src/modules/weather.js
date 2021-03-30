@@ -1,26 +1,34 @@
-import { ADD, REMOVE, GET } from '../actions/actionTypes';
-import { INITIAL_CITY } from '../constants/constants';
+import { GET, ADD, REMOVE } from '../actions/actionTypes';
+import { INITIAL_INFO } from '../constants/constants';
 
-const weatherReducer = (state = INITIAL_CITY, action) => {
+const weatherReducer = (state = INITIAL_INFO, action) => {
   switch (action.type) {
-  case ADD:
-    console.log(state.city)
-    return {
-      ...state,
-      cities: [...state.cities, action.city]
-    };
-  case REMOVE:
-    console.log(state.city);
-    return {
-      ...state,
-      cities: [...state.cities, action.city]
-    };
   case GET:
-    console.log(state.city);
     return {
       ...state,
-      cities: [...state.cities, action.city]
-    };
+      weather: {
+        now: action.weather.now,
+        min: action.weather.min,
+        max: action.weather.max,
+        desc: action.weather.desc,
+        city: {
+          current: action.weather.city.current,
+          cities: [...state.weather.city.cities]
+        }
+      }
+    }
+  case ADD:
+    return {
+      ...state,
+      CITY: {
+        CURRENT: action.city.current,
+        CITIES: [action.city.current, ...state]
+      }
+    }
+  case REMOVE:
+    return {
+      ...state
+    }
   default:
     return state;
   }
