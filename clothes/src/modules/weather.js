@@ -13,7 +13,7 @@ const weatherReducer = (state = INITIAL_INFO, action) => {
         desc: action.weather.desc,
         city: {
           current: action.weather.city.current,
-          cities: [...state.weather.city.cities]
+          cities: [action.weather.city.current, ...state.weather.city.cities]
         }
       }
     }
