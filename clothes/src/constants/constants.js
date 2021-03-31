@@ -412,26 +412,18 @@ const INITIAL_DASH = {
   QUARTER: '----'
 };
 
-const INITIAL_WEATHER = {
-  TEMPS: {
-    NOW: '',
-    MIN: '',
-    MAX: ''
-  },
-  LOCATION: '',
-  WEATHER: ''
+const INITIAL_INFO = {
+  weather: {
+    now: '',
+    min: '',
+    max: '',
+    desc: '',
+    city: {
+      current: '',
+      cities: ['']
+    }
+  }
 };
-
-const INITIAL_TIME = {
-  hour: '',
-  minute: ''
-};
-
-const INITIAL_CITY = {
-  current: 'seoul',
-  cities: []
-}
-
 
 export {
   API,
@@ -443,7 +435,6 @@ export {
   TEMP,
   CLOTHING,
   INITIAL_DASH,
-  INITIAL_WEATHER,
   INITIAL_TIME,
-  INITIAL_CITY
+  INITIAL_INFO
 }
