@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getTime } from './actions/time';
+import { getCity } from './actions/weather';
 import { useOnMounted } from './actions/useOnMount';
 import { fetchData } from './utils/fetch';
 import { API, TEMP } from './constants/constants';
