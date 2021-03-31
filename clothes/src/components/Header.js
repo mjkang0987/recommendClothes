@@ -1,6 +1,6 @@
-import { INITIAL_DASH, TIME_TEXT_HALF } from '../constants/constants';
+import { CITIES, INITIAL_DASH, TIME_TEXT_HALF } from '../constants/constants';
 
-const Header = ({time}) => {
+const Header = ({time, city}) => {
   const {hour, minute} = time;
   const {MORNING, AFTERNOON} = TIME_TEXT_HALF;
   const {DOUBLE, QUARTER} = INITIAL_DASH;
@@ -8,7 +8,7 @@ const Header = ({time}) => {
   return (
     <header className="header">
       <span className="header-info">
-        <strong className="header-location">{QUARTER}</strong>
+        <strong className="header-location">{city ? CITIES[city] : QUARTER}</strong>
         <span className="header-time">
           <span className="header-time-type">
             {hour !== '' ? (hour < 12 ? MORNING : AFTERNOON) : QUARTER}

@@ -52,7 +52,10 @@ const App = ({time, getTime, weather, getCity}) => {
   }, []);
   return (
     <Router>
-      <Header time={time}/>
+      <Header
+        time={time}
+        city={weather.city.current}/>
+        <div>{weather.city.cities}</div>
     </Router>
   );
 }
