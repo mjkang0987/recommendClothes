@@ -1,17 +1,12 @@
-import { useContext } from 'react';
-import { Weather } from '../../App';
 import Temp from '../../components/Main/Temp';
 import Clothes from '../../components/Main/Clothes';
 import { CLOTHING, TIME_TEXT } from '../../constants/constants';
 
-const Main = _ => {
-  const temps = useContext(Weather);
-  const {TEMPS} = temps.weather;
-  const {hour} = temps.time;
-  const {NOW} = TEMPS;
-
+const Main = ({time, weather}) => {
+  const {hour} = time;
+  const {now} = weather;
   const timeType = TIME_TEXT[Object.keys(TIME_TEXT).map(Number).find(t => hour <= t)];
-  const tempClothes = Object.keys(CLOTHING).map(Number).find(c => NOW <= c);
+  const tempClothes = Object.keys(CLOTHING).map(Number).find(c => now <= c);
 
   const clothing = {
     term: CLOTHING[tempClothes].TERM,
@@ -23,10 +18,10 @@ const Main = _ => {
     <>
       <Temp
         time={timeType}
-        temps={temps}
+        weather={weather}
         clothing={clothing}/>
       <Clothes
-        temps={TEMPS}
+        weather={weather}
         clothing={clothing}/>
     </>
   );
