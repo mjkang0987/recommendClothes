@@ -26,9 +26,8 @@ const App = ({time, getTime, weather, getCity}) => {
       await getCity({weather});
     })();
 
-    setInterval(_ => {
-      initTime();
-    }, 5000);
+    const interval = setInterval(initTime, 5000);
+    return () => clearInterval(interval);
   }, []);
   return (
     <Router>
