@@ -1,10 +1,11 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getTime } from './actions/time';
 import { getCity } from './actions/weather';
 import { useOnMounted } from './actions/useOnMount';
 import { getWeather } from './utils/getWeather';
 import Header from './components/Header';
+import Main from './routes/main/Main';
 
 const App = ({time, getTime, weather, getCity}) => {
   const initTime = _ => {
@@ -34,7 +35,10 @@ const App = ({time, getTime, weather, getCity}) => {
       <Header
         time={time}
         city={weather.city.current}/>
-        <div>{weather.city.current}</div>
+      <Route
+        path="/"
+        render={_ => <Main time={time} weather={weather}/>}/>
+      <Redirect path="*" to="/" />
     </Router>
   );
 }
