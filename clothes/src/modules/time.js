@@ -7,8 +7,8 @@ const timeReducer = (state = INITIAL_TIME, action) => {
     return {
       time: {
         ...state,
-        hour: action.now.time.hour,
-        minute: action.now.time.minute
+        hour: action.now.hour,
+        minute: action.now.minute
       }
     }
   default:

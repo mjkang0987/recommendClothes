@@ -11,13 +11,11 @@ const App = ({time, getTime, weather, getCity}) => {
   const initTime = _ => {
     const initTime = new Date();
     const timeObj = {
-      time: {
-        hour: initTime.getHours(),
-        minute: initTime.getMinutes()
-      }
+      hour: initTime.getHours(),
+      minute: initTime.getMinutes()
     };
     getTime({now: timeObj});
-  }
+  };
 
   useOnMounted(_ => {
     initTime();
