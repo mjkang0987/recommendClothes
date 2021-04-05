@@ -6,6 +6,7 @@ import { useOnMounted } from './actions/useOnMount';
 import { getWeather } from './utils/getWeather';
 import Header from './components/Header';
 import Main from './routes/main/Main';
+import Cities from './routes/cities/Cities';
 
 const App = ({time, getTime, weather, getCity}) => {
   const initTime = _ => {
@@ -33,8 +34,11 @@ const App = ({time, getTime, weather, getCity}) => {
         time={time}
         city={weather.city.current}/>
       <Route
-        path="/"
+        path="/cities"
         render={_ => <Main time={time} weather={weather}/>}/>
+      <Route
+        path="/"
+        render={_ => <Cities />}/>
       <Redirect path="*" to="/" />
     </Router>
   );
